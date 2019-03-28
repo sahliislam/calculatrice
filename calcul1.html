@@ -1,50 +1,41 @@
 <html>
-<HEAD><TITLE>OUTILS</TITLE></HEAD>
-<BODY>
-<form name="calculatrice" action>
-<TABLE>
-<TR>
-	<TD><INPUT type="text" placeholder="num1" name="nb1" size="15"></TD>
-	<td><SELECT name="operateur" size="1" value="choix de l'opérateur">
-		<OPTION value="+"> +</OPTION>
-		<OPTION value="-">-</OPTION>
-		<OPTION value="*">*</OPTION>
-		<OPTION value="/">/</OPTION>
-		</SELECT>
-	</td>
-	<TD><INPUT type="text" placeholder="num 2" name="nb2" size="15"></TD>
-	<TD><INPUT type="button" value="=" onclick="rslt();"></TD>
-	<TD><INPUT  name="ecran" size="15" value="0" width="100%"></TD>
-	</TR>
-	</TABLE>
-		</form>
-<script language="Javascript"/>
-funtion rslt()
-{	
-	var nombr1 = document.forms["calculatrice"].nb1.value;
-	var nombr2 = document.forms["calculatrice"].nb1.value;
-	var resultat;
-	
-	switch (nombre.operateur.value)
-	{
-		case '+':
-		resultat =parseFloat(nombr1) + parseFloat(nombr2) ;
-		break;
-		case '-':
-		resultat =parseFloat(nombre.nb1.value) - parseFloat(nombr2.value);
-		break;
-		case '*':
-		resultat =parseFloat(nombr1.value) * parseFloat(nombr2.value);
-		break;
-		case '/':
-		resultat =parseFloat(nombr1.value) / parseFloat(nombr2.value);
-		break;
-		default: 
-		document.calculatrice.mess.value = "Verifier votre operation";
-		break;
-	}
-	document.forms["calculatrice"].ecran.value = resultat;
+<head>
+<script language="JavaScript">
+function operation(chiffre1, chiffre2, signe) {
+   switch (signe) {
+      case 0 : return parseInt(chiffre1) + parseInt(chiffre2); break;
+      case 1 : return chiffre1 - chiffre2; break;
+      case 2 : return chiffre1 * chiffre2; break;
+      case 3 : if (chiffre2 != 0) return chiffre1 / chiffre2;
+               else return "division par 0";
+   }
 }
+//-->
 </script>
-</body>
+
+</head>
+
+<body>
+<form method="POST" name="op">
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+  <tr>
+    <td width="55%" valign="top">Indiquez 2 chiffres  :<br>
+      <input type="text" name="chiffre1" size="10">
+      <input type="text" name="chiffre2" size="10">
+      <p>Résultat :<br>
+      <input type="text" name="resultat" size="20">
+    </td>
+      <td width="45%" valign="top">Opération :<br>
+      <select size="4" onChange="document.op.resultat.value =
+                                 operation(document.op.chiffre1.value, document.op.chiffre2.value, this.selectedIndex)">
+        <option>addition</option>
+        <option>soustraction</option>
+        <option>multiplication</option>
+        <option>division</option>
+      </select>
+    </td>
+  </tr>
+</table>
+</form>
+
 </html>
