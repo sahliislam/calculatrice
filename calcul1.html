@@ -1,45 +1,84 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Calculator - Gheorghe Marin Adrian</title>
-    </head>
-    <body>
-        <div id='calc-contain'>
-  
-          <form name="calculator">
-            
-            <input type="text" name="answer" />
-            <br>
-            
-            <input type="button" value=" 1 " onclick="calculator.answer.value += '1'" />
-            <input type="button" value=" 2 " onclick="calculator.answer.value += '2'" />
-            <input type="button" value=" 3 " onclick="calculator.answer.value += '3'" />
-            <input type="button" value=" + " onclick="calculator.answer.value += '+'" />
-            <br/>
-            
-            <input type="button" value=" 4 " onclick="calculator.answer.value += '4'" />
-            <input type="button" value=" 5 " onclick="calculator.answer.value += '5'" />
-            <input type="button" value=" 6 " onclick="calculator.answer.value += '6'" />
-            <input type="button" value=" - " onclick="calculator.answer.value += '-'" />
-            </br>
-          
-            <input type="button" value=" 7 " onclick="calculator.answer.value += '7'" />
-            <input type="button" value=" 8 " onclick="calculator.answer.value += '8'" />
-            <input type="button" value=" 9 " onclick="calculator.answer.value += '9'" />
-            <input type="button" value=" x " onclick="calculator.answer.value += '*'" />
-            </br>
-        
-            <input type="button" value=" c " onclick="calculator.answer.value = ''" />
-            <input type="button" value=" 0 " onclick="calculator.answer.value += '0'" />
-            <input type="button" value=" = " onclick="calculator.answer.value = eval(calculator.answer.value)" />
-            <input type="button" value=" / " onclick="calculator.answer.value += '/'" />
-            </br>
-  
+        <title>Calculator </title>
+        <link rel ="stylesheet" href="C:\Users\lenovo\Desktop\calculatrice\calculatrice\calcul3.css"/>
+        <meta charset="utf-8">
+      </head>
+      <body>
+         <center>
+          <h1 class="title">Calculator<h1>
+          <table>
+            <tr>
+              <td colspan="4" align="right" id="case">
+                <span id="calc-output"></span>
+              </td>
+            </tr>
+         </table>
+         <table>
+           <tr>
+             <td>
+               <input class="number" type="button" value="1" id="button-1" onclick="btm(1)"/>
+             </td>
+             <td>
+               <input class="number" type="button" value="2" id="button-2" onclick="btm(2)"/>
+             </td>
+             <td>
+               <input class="number" type="button" value="3" id="button-3" onclick="btm(3)"/>
+             </td>
+             <td>
+               <input class="operator" type="button" value="C" id="button-C" onclick="btmClean()"/>
+             </td>
+           </tr>
     
-          </form>
-          <div id="agh">
-
-          </div>
-        </div>
-    </body>
-</html>
+           <tr>
+             <td>
+               <input class="number" type="button" value="4" id="button-4" onclick="btm(4)"/>
+             </td>
+             <td>
+               <input class="number" type="button" value="5" id="button-5" onclick="btm(5)"/>
+             </td>
+             <td>
+               <input class="number" type="button" value="6" id="button-6" onclick="btm(6)"/>
+             </td>
+             <td>
+               <input class="operator" type="button" value="+" id="button-+" onclick="btmPlus()"/>
+             </td>
+           </tr>
+    
+           <tr>
+             <td>
+               <input class="number" type="button" value="7" id="button-7" onclick="btm(7)"/>
+             </td>
+             <td>
+               <input class="number" type="button" value="8" id="button-8" onclick="btm(8)"/>
+             </td>
+             <td>
+               <input class="number" type="button" value="9" id="button-9" onclick="btm(9)"/>
+             </td>
+             <td>
+               <input class="operator" type="button" value="-" id="button--" onclick="btmLess()"/>
+             </td>
+           </tr>
+    
+           <tr>
+             <td>
+               <input class="operator" type="button" value="x" id="button-*" onclick="btmMultiply()"/>
+             </td>
+             <td>
+               <input class="number"type="button" value="0" id="button-0" onclick="btm(0)"/>
+             </td>
+             <td>
+               <input class="operator" type="button" value="÷" id="button-/" onclick="btmDivision()"/>
+             </td>
+             <td>
+               <input class="operator" type="button" value="=" id="button-=" onclick="btmEgal()"/>
+             </td>
+           </tr>
+    
+         </table>
+         </center>
+    <script src="C:\Users\lenovo\Desktop\calculatrice\calculatrice\calcul2.js"></script>
+      </body>
+    </html>
+    
